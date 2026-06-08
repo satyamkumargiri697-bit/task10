@@ -1,0 +1,134 @@
+/* Basic Reset aur Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+/* Navbar Style */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+}
+
+.navbar nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    border: 1px solid #10b981;
+    background: transparent;
+    color: #10b981;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero Section Layout */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 8%;
+    min-height: 80vh;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    line-height: 1.3;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.blue-text {
+    display: inline;
+    color: #0080ff;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Button Hover Effect (Jaisa task description me bataya hai) */
+.hero-btn {
+    padding: 12px 25px;
+    background-color: #0080ff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #005bc5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 128, 255, 0.3);
+}
+
+/* Hero Image Container */
+.hero-image-container {
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+/* CSS Animation Implementation (Orbit and Squeeze) */
+.animate-hero-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    
+    /* Animation settings: 6 seconds duration, infinite loop, smooth easing */
+    animation: orbitAndSqueeze 6s ease-in-out infinite;
+}
+
+/* Keyframes jo image ko orbit me ghumayenge aur squeeze karenge */
+@keyframes orbitAndSqueeze {
+    0% {
+        transform: translate(0, 0) scale(1, 1);
+    }
+    25% {
+        /* Thoda upar-right jayega aur horizontally dabega (squeeze) */
+        transform: translate(15px, -15px) scale(0.93, 1.05);
+    }
+    50% {
+        /* Orbit movement niche ki taraf aur vertically squeeze */
+        transform: translate(25px, 15px) scale(1.05, 0.92);
+    }
+    75% {
+        /* Left side orbit rotation aur thoda change */
+        transform: translate(-15px, 10px) scale(0.95, 1.03);
+    }
+    100% {
+        /* Wapas initial position par smooth end */
+        transform: translate(0, 0) scale(1, 1);
+    }
+}
